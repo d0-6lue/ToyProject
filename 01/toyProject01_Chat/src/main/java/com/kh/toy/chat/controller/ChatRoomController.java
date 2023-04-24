@@ -16,6 +16,7 @@ public class ChatRoomController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		HttpSession session = req.getSession();
+		session.removeAttribute("lastChatNo");
 		
 		if(session.getAttribute("loginMember") != null )
 			req.getRequestDispatcher("/WEB-INF/views/chat/chat-room.jsp").forward(req, resp);

@@ -5,18 +5,21 @@ public class ChatVo {
 	private String chatNo;
 	private String chatRoomNo;
 	private String chatSender;
+	private String chatSenderNick;
 	private String chatContent;	
 	private String chatEnrollDate;
 	
 	public ChatVo() {
 		super();
 	}
-	
-	public ChatVo(String chatNo, String chatRoomNo, String chatSender, String chatContent, String chatEnrollDate) {
+
+	public ChatVo(String chatNo, String chatRoomNo, String chatSender, String chatSenderNick, String chatContent,
+			String chatEnrollDate) {
 		super();
 		this.chatNo = chatNo;
 		this.chatRoomNo = chatRoomNo;
 		this.chatSender = chatSender;
+		this.chatSenderNick = chatSenderNick;
 		this.chatContent = chatContent;
 		this.chatEnrollDate = chatEnrollDate;
 	}
@@ -52,11 +55,18 @@ public class ChatVo {
 	public void setChatEnrollDate(String chatEnrollDate) {
 		this.chatEnrollDate = chatEnrollDate;
 	}
+	public String getChatSenderNick() {
+		return chatSenderNick;
+	}
+	public void setChatSenderNick(String chatSenderNick) {
+		this.chatSenderNick = chatSenderNick;
+	}
 
 	@Override
 	public String toString() {
 		return "ChatVo [chatNo=" + chatNo + ", chatRoomNo=" + chatRoomNo + ", chatSender=" + chatSender
-				+ ", chatContent=" + chatContent + ", chatEnrollDate=" + chatEnrollDate + "]";
+				+ ", chatSenderNick=" + chatSenderNick + ", chatContent=" + chatContent + ", chatEnrollDate="
+				+ chatEnrollDate + "]";
 	}
-	
+
 }

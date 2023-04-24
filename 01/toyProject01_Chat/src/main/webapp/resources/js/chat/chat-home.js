@@ -33,6 +33,7 @@ function loadChatRoom() {
         const chatListTbody = document.querySelector(".chat-list-tbody");
 
         for(i in data){
+
             const tr = document.createElement("tr");
             chatListTbody.appendChild(tr);
 
@@ -50,15 +51,32 @@ function loadChatRoom() {
 
             const attendChatRoom = document.createElement("button");
             attendChatRoom.innerText = "참가하기";
-            attendChatRoom.addEventListener("click", function(){
-                location.href = contextPath + "/chat/room?no=" + data[i].chatRoomNo; 
-            })
             attendChatRoom.classList.add("attend-btn")
 
             tr.appendChild(chatRoomNo);
             tr.appendChild(chatRoomName);
             tr.appendChild(chatRoomMax);
             tr.appendChild(attendChatRoom);
+        }
+
+        //location.href = contextPath + "/chat/room?no=" + data[i].chatRoomNo;
+        
+        function test(a, b){
+            a.addEventListener("click", function(){
+                location.href = contextPath + "/chat/room?no=" + b; 
+            })
+        }
+
+        const attendChatRoomBtn = document.querySelectorAll(".attend-btn");
+        for(i in attendChatRoomBtn) {
+
+            if(i == 0){
+
+            }
+            else{
+                attendChatRoomBtn[i].addEventListener("click", test(attendChatRoomBtn[i], data[i-1].chatRoomNo));
+            }
+
         }
         
     })
@@ -98,9 +116,6 @@ function reLoadChatRoom() {
 
             const attendChatRoom = document.createElement("button");
             attendChatRoom.innerText = "참가하기";
-            attendChatRoom.addEventListener("click", function(){
-                location.href = contextPath + "/chat/room?no=" + data[i].chatRoomNo; 
-            })
             attendChatRoom.classList.add("attend-btn")
 
 
@@ -108,6 +123,13 @@ function reLoadChatRoom() {
             tr.appendChild(chatRoomName);
             tr.appendChild(chatRoomMax);
             tr.appendChild(attendChatRoom);
+        }
+
+        for(i in data){
+            const attendChatRoomBtn = document.querySelectorAll(".attend-btn");
+            attendChatRoomBtn[i+1].addEventListener("click", function(){
+                location.href = contextPath + "/chat/room?no=" + data[i].chatRoomNo; 
+            })
         }
         
     })

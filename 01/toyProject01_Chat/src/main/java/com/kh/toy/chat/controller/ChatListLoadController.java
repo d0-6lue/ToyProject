@@ -21,15 +21,22 @@ public class ChatListLoadController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		System.out.println("method called..");
 		
 		String chatRoomNo = req.getParameter("no");
+		
+		String lastChatNo = (String) req.getSession().getAttribute("lastChatNo");
+		if(lastChatNo == null) {
+			lastChatNo = "0";
+		}
 		
 		ChatService cs = new ChatService();
 		List<ChatVo> chatVoList = new ArrayList<>();
 		
-		chatVoList = cs.loadChatList(chatRoomNo);
+		chatVoList = cs.loadChatList(chatRoomNo, lastChatNo);
+		
+		if("[]".equals(chatVoList)) {
+			req.getSession().setAttribute("lastChatNo", (chatVoList.get( chatVoList.size() - 1 )).getChatNo() );			
+		}
 		
 		Gson gson = new Gson();
 		

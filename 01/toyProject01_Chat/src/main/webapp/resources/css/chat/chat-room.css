@@ -11,16 +11,59 @@
     background-color: gainsboro;
 }
 
-.chat {
+.chat-box {
     width: 550px;
     height: 700px;
 
     margin: auto;
     
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    justify-content: end;
 
     background-color: white;
+}
+
+.orthers-chat {
+    display: flex;
+    flex-direction: column;
+}
+
+.my-chat {
+    align-self: flex-end;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.chat {
+    width: 300px;
+}
+
+.chat-head {
+    width: 100%;
+}
+
+.my-chat-head {
+    display: flex;
+    justify-content: end;
+}
+
+.sender {
+    width: 120px;
+}
+
+.eroll-date {
+    width: 180px;
+}
+
+.chat-content {
+    width: 300px;
+}
+
+.my-chat-content {
+    display: flex;
+    justify-content: end;
 }
 
 .input-bar {

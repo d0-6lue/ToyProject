@@ -51,7 +51,7 @@ public class ChatService {
 	} // loadChatRoom()
 
 	
-	public List<ChatVo> loadChatList(String chatRoomNo) {
+	public List<ChatVo> loadChatList(String chatRoomNo, String lastChatNo) {
 		
 		List<ChatVo> chatVoList = new ArrayList<>();
 		
@@ -59,7 +59,7 @@ public class ChatService {
 		
 		
 		ChatDao dao = new ChatDao();
-		chatVoList = dao.loadChatList(conn, chatRoomNo);
+		chatVoList = dao.loadChatList(conn, chatRoomNo, lastChatNo);
 		
 		
 		JDBCTemplate.close(conn);

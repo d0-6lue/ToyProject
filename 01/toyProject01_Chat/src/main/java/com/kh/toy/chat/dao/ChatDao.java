@@ -76,11 +76,11 @@ public class ChatDao {
 	} // loadChatRoom()
 
 	
-	public List<ChatVo> loadChatList(Connection conn, String chatRoomNo) {
+	public List<ChatVo> loadChatList(Connection conn, String chatRoomNo, String lastChatNo) {
 		
 		List<ChatVo> chatVoList = new ArrayList<>();
 		
-		String sql = "SELECT CHAT_NO, CHAT_SENDER, CHAT_CONTENT, CHAT_ENROLL_DATE FROM CHAT_ARCHIVE WHERE CHAT_ROOM_NO = ?";
+		String sql = "SELECT CHAT_NO, CHAT_SENDER, MEMBER_NICK, CHAT_CONTENT, CHAT_ENROLL_DATE FROM CHAT_ARCHIVE CA JOIN MEMBER M ON CA.CHAT_SENDER = M.MEMBER_NO  WHERE CHAT_ROOM_NO = ? AND CHAT_NO > ? ORDER BY CHAT_ENROLL_DATE";
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -88,6 +88,7 @@ public class ChatDao {
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, chatRoomNo);
+			pstmt.setString(2, lastChatNo);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -96,6 +97,7 @@ public class ChatDao {
 				
 				vo.setChatNo(rs.getString("CHAT_NO"));
 				vo.setChatSender(rs.getString("CHAT_SENDER"));
+				vo.setChatSenderNick(rs.getString("MEMBER_NICK"));
 				vo.setChatContent(rs.getString("CHAT_CONTENT"));
 				vo.setChatEnrollDate(rs.getString("CHAT_ENROLL_DATE"));
 				
