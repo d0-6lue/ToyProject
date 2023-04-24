@@ -30,6 +30,10 @@
                 	<a href="${root }/member/logout">로그아웃</a>
                 	<br>
                 	<a href="${root }/chat/home">채팅</a>
+                    <script>
+                        const nick = '<%=(String)session.getAttribute("nick")%>';
+                        sessionStorage.setItem("nick", nick);
+                    </script>
                 </c:if>
             </div>
 
@@ -41,7 +45,7 @@
     	<c:if test="${not empty alertMsg}" >
     		alert("${alertMsg}");
     		<c:remove var="alertMsg"/>
-    	</c:if>
+        </c:if>
     </script>
 
 </body>

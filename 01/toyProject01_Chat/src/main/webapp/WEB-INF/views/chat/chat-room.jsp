@@ -9,14 +9,15 @@
 <meta charset="EUC-KR">
 <title>Toy01</title>
 <link rel="stylesheet" href="${root}/resources/css/chat/chat-room.css">
-<script src="${root}/resources/js/chat/chat-room.js"></script>
+<script defer src="${root}/resources/js/chat/chat-room.js"></script>
 </head>
 <body>
 
 	<div class="wrap">
 
         <div class="chat-area">
-            <div class="chat">
+
+            <div class="chat-box">
 
             </div>
 

@@ -40,6 +40,7 @@ public class MemberLoginController extends HttpServlet {
 			HttpSession session = req.getSession();
 			session.setAttribute("alertMsg", "로그인 성공");
 			session.setAttribute("loginMember", loginMember);
+			session.setAttribute("nick", loginMember.getMemberNick() );
 			
 			String root = req.getContextPath();
 			resp.sendRedirect(root + "/home");
