@@ -1,0 +1,56 @@
+.modal-wrap {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(25, 25, 25, 0.5);
+}
+
+.modal
+{
+    width: 400px;
+    height: 600px;
+    border: 1px solid black;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.active
+{
+    display: flex;
+}
+
+.create-chat-room-form {
+    width: 300px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-list-table {
+    width: 600px;
+}
+
+.chat-room-no {
+    width: 100px;
+    text-align: center;
+}
+
+.chat-room-name {
+    width: 300px;
+}
+
+.chat-room-max {
+    width: 100px;
+    text-align: center;
+}
+
+.attend-btn {
+    width: 100px;
+    text-align: center;
+}
