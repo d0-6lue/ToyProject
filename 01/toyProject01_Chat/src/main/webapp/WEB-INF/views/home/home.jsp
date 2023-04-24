@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Toy01</title>
-<script src="${root }/resources/js/home/home.js"></script>
+<script defer src="${root }/resources/js/home/home.js"></script>
 </head>
 <body>
 
@@ -30,6 +30,8 @@
                 	<a href="${root }/member/logout">로그아웃</a>
                 	<br>
                 	<a href="${root }/chat/home">채팅</a>
+                    /
+                    <a href="${root }/chat/ovo">1:1 대화</a>
                     <script>
                         const nick = '<%=(String)session.getAttribute("nick")%>';
                         sessionStorage.setItem("nick", nick);

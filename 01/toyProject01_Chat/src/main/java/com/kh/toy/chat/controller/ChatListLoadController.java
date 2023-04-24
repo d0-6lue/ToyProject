@@ -34,17 +34,21 @@ public class ChatListLoadController extends HttpServlet {
 		
 		chatVoList = cs.loadChatList(chatRoomNo, lastChatNo);
 		
-		if("[]".equals(chatVoList)) {
-			req.getSession().setAttribute("lastChatNo", (chatVoList.get( chatVoList.size() - 1 )).getChatNo() );			
-		}
+		System.out.println(chatVoList);
 		
 		Gson gson = new Gson();
 		
 		String chatVoListJson = gson.toJson(chatVoList);
 		
-		PrintWriter out = resp.getWriter();
-		out.write(chatVoListJson);
-	
+		if( !("[]".equals(chatVoListJson)) ) {
+			req.getSession().setAttribute("lastChatNo", (chatVoList.get( chatVoList.size() - 1 )).getChatNo() );	
+		
+			resp.setCharacterEncoding("UTF-8");
+			
+			PrintWriter out = resp.getWriter();
+			out.write(chatVoListJson);
+		}
+		
 	}
 	
 }
