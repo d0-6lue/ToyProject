@@ -22,6 +22,8 @@
     justify-content: end;
 
     background-color: white;
+
+    overflow-y: scroll;
 }
 
 .orthers-chat {

@@ -26,8 +26,9 @@ public class ChatHomeController extends HttpServlet{
 
 		HttpSession session = req.getSession();
 		
-		if(session.getAttribute("loginMember") != null )
+		if(session.getAttribute("loginMember") != null ) {
 			req.getRequestDispatcher("/WEB-INF/views/chat/chat-home.jsp").forward(req, resp);
+		}
 		else {
 			session.setAttribute("alertMsg", "로그인하셔야 합니다.");
 			req.getRequestDispatcher("/WEB-INF/views/home/home.jsp").forward(req, resp);

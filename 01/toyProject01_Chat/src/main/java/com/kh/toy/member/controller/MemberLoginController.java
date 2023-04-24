@@ -1,7 +1,10 @@
 package com.kh.toy.member.controller;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,6 +44,19 @@ public class MemberLoginController extends HttpServlet {
 			session.setAttribute("alertMsg", "로그인 성공");
 			session.setAttribute("loginMember", loginMember);
 			session.setAttribute("nick", loginMember.getMemberNick() );
+			
+			ServletContext application = req.getServletContext();
+			List<MemberVo> loginMemberList = new ArrayList<>();
+			
+			if(application.getAttribute("loginMemberList") != null) {
+				System.out.println(application.getAttribute("loginMemberList"));
+				loginMemberList.addAll((List<MemberVo>) application.getAttribute("loginMemberList"));
+			}
+			
+			loginMemberList.add(loginMember);
+			
+			application.setAttribute("loginMemberList", loginMemberList);
+			
 			
 			String root = req.getContextPath();
 			resp.sendRedirect(root + "/home");

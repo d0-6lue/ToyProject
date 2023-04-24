@@ -13,7 +13,6 @@ function loadChat(){
     const chatBox = document.querySelector(".chat-box");
 
     const roomNo = (new URLSearchParams(location.search).get('no'));
-    console.log(roomNo);
 
     const contextPath = getContextPath();
 
@@ -35,7 +34,7 @@ function loadChat(){
             const enrollDate = document.createElement("span");
             enrollDate.innerText = data[i].chatEnrollDate
 
-            const chatContent = document.createElement("diva")
+            const chatContent = document.createElement("div")
             chatContent.innerText = data[i].chatContent;
             chatContent.classList.add("chat-content");
 
@@ -54,7 +53,7 @@ function loadChat(){
             chat.appendChild(chatHead);
             chat.appendChild(chatContent);
 
-            chatBox.append(chat);
+            chatBox.appendChild(chat);
 
         }
         

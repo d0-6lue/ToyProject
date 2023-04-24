@@ -29,6 +29,8 @@ public class ChatRoomLoadController extends HttpServlet {
 		Gson gson = new Gson();
 		String chatRoomListJson = gson.toJson(chatRoomList);
 		
+		resp.setCharacterEncoding("UTF-8");
+		
 		PrintWriter out = resp.getWriter();
 		out.write(chatRoomListJson);
 	

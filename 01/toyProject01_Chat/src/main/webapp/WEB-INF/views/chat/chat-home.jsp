@@ -37,6 +37,8 @@
                 
             </table>
 
+            <button onclick="location.href='${root}/home'">홈으로</button>
+
         </div>
 
     </div>
