@@ -28,10 +28,12 @@ public class ChatRoomCreateController extends HttpServlet {
 		int result = cs.createChatRoom(vo);
 		
 		if(result == 1) {
-			
+			String root = req.getContextPath();
+			resp.sendRedirect( root + "/chat/home");
 		}
 		else {
-			
+			req.setAttribute("errorMsg", "채팅방 만들기 실패");
+			req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
 		}
 	
 	}
