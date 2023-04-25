@@ -49,7 +49,6 @@ public class MemberLoginController extends HttpServlet {
 			List<MemberVo> loginMemberList = new ArrayList<>();
 			
 			if(application.getAttribute("loginMemberList") != null) {
-				System.out.println(application.getAttribute("loginMemberList"));
 				loginMemberList.addAll((List<MemberVo>) application.getAttribute("loginMemberList"));
 			}
 			

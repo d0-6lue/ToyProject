@@ -15,15 +15,19 @@ function loadLoginMemberList() {
     fetch( contextPath + "/login_member_list")
     .then( (response) => response.json() )
     .then( (data) => {
-        
-        console.log(data);
 
         for(i in data){
-            const loginMember = document.createElement("div");
+            const logiNick = window.sessionStorage.getItem("nick");
 
-            loginMember.innerText = data[i].memberNick;
+            if(data[i].memberNick != logiNick) {
+                const loginMember = document.createElement("a");
 
-            loginMemberListArea.appendChild(loginMember);
+                loginMember.href = contextPath + "/chat/ovo/room?opponent=" + data[i].memberNick ;
+                loginMember.innerText = data[i].memberNick;
+
+                loginMemberListArea.appendChild(loginMember);
+            }
+            
         }
 
     } )

@@ -1,0 +1,90 @@
+.chat-area {
+    width: 600px;
+    height: 768px;
+
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    background-color: gainsboro;
+}
+
+.chat-box {
+    width: 550px;
+    height: 700px;
+
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    background-color: white;
+
+    overflow-y: scroll;
+}
+
+.orthers-chat {
+    display: flex;
+    flex-direction: column;
+}
+
+.my-chat {
+    align-self: flex-end;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.chat {
+    width: 300px;
+}
+
+.chat-head {
+    width: 100%;
+}
+
+.my-chat-head {
+    display: flex;
+    justify-content: end;
+}
+
+.sender {
+    width: 120px;
+}
+
+.eroll-date {
+    width: 180px;
+}
+
+.chat-content {
+    width: 300px;
+}
+
+.my-chat-content {
+    display: flex;
+    justify-content: end;
+}
+
+.input-bar {
+    width: 550px;
+    height: 40px;
+
+    margin: auto;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+input[name=chatMsg] {
+    width: 420px;
+    height: 30px;
+}
+
+.chat-btn {
+    width: 80px;
+    height: 30px;
+}

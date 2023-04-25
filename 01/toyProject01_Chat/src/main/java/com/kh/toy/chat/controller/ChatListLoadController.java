@@ -34,8 +34,6 @@ public class ChatListLoadController extends HttpServlet {
 		
 		chatVoList = cs.loadChatList(chatRoomNo, lastChatNo);
 		
-		System.out.println(chatVoList);
-		
 		Gson gson = new Gson();
 		
 		String chatVoListJson = gson.toJson(chatVoList);
