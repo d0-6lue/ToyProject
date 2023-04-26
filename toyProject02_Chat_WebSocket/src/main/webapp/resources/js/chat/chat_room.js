@@ -2,7 +2,7 @@ var url = window.location.href;
 var path = window.location.pathname;
 
 var root = path.substring(
-    0, (path.substring(1, )).indexOf('/') + 1
+    0, (path.substring(1, path.length )).indexOf('/') + 1
 )
 
 var hostname = url.substring(7, url.indexOf(root));
