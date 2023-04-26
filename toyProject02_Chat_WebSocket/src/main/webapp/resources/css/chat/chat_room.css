@@ -1,0 +1,34 @@
+.chat-area {
+    width: 568px;
+    height: 768px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: spa;
+
+    background-color: aquamarine;
+}
+
+.chat-box {
+    width: 518px;
+    height: 668px;
+    margin: auto;
+
+    background-color: white;
+}
+
+.input_bar {
+    width: 518px;
+    height: 50px;
+    margin: auto;
+}
+
+input[name=chatMsg] {
+    width: 418px;
+    height: 30px;
+}
+
+.send-btn {
+    width: 80px;
+    height: 30px;
+}
