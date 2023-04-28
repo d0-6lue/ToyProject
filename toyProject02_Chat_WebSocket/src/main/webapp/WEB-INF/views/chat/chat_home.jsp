@@ -15,11 +15,19 @@
 
 	<div class="wrap">
 
+        <a href="${root}/chat/home">새로고침</a>
+
+        <br><hr><br>
+
+        <div>접속인원들..</div>
+
         <c:forEach var="loginMember" items="${loginMemberList}">
             
             <c:if test="${loginMember.memberNick ne loginNick}">
                 <div>
+                    
                     <a href="${root}/chat/room?person=${loginMember.memberNick}">${loginMember.memberNick}</a>
+
                 </div>
             </c:if>
         </c:forEach>

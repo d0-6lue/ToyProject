@@ -19,6 +19,8 @@
 
             <div class="chat-box">
 
+                
+
             </div>
 
             <div class="input_bar">
@@ -27,6 +29,8 @@
             </div>
 
         </div>
+
+        <a href="${root}/chat/home">챗홈으로</a>
 
     </div>
 
